@@ -52,17 +52,12 @@ int cumulativeGPA(){ //Calculate cumulative GPA over semesters
 
 int finalNeed(){ //Finds a needed final grade
     
-    float finalWorth = 0; //Weight of final, no "%" sign
-    cout << "How much is your final worth?" << endl;
-    cin >> finalWorth;
-    
+    int finalWorth = 0; //Weight of final, no "%" sign
     float gradeWant = 0; //Semester grade desire
-    cout << "What grade are you aiming for?" << endl;
-    cin >> gradeWant;
+    float currentGrade = 0; //Current grade
+    cout << "Enter the weight of your final, followed by the grade you need, followed by your current grade (Seperate each value with a space" << endl;
     
-    float currentGrade = 0; //Current gpa
-    cout << "What is your current grade?" << endl;
-    cin >> currentGrade;
+    scanf("%d %f %f",&finalWorth,&gradeWant,&currentGrade);
     
     float finalNeed = 0; //Final print variable
     finalNeed = (gradeWant - (1 - (finalWorth/100))*currentGrade)/finalWorth;
