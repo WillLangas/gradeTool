@@ -162,30 +162,14 @@ int masterCalculator(){ //Main menu and options to function
     int optionFunction = 0;
     cin >> optionFunction;
     
-    if(optionFunction == 1){
-        currentGPA();
-        cout << " " << endl;
-        masterCalculator();
-    } else if(optionFunction == 2){
-        cumulativeGPA();
-        cout << " " << endl;
-        masterCalculator();
-    } else if(optionFunction == 3){ //Based on #, does function
-        finalNeed();
-        cout << " " << endl;
-        masterCalculator();
-    } else if(optionFunction == 4){
-        instructions();
-        cout << " " << endl; //endl important don't delete
-        masterCalculator();
-    } else if(optionFunction == 5){
-        errorMessagesPrint();
-        cout << " " << endl;
-        masterCalculator();
-    } else {
-        cout << "Error 104" << endl;
-        return 0;
+    switch(optionFunction){ //Based on selection, executes 
+        case 1: currentGPA(); cout << " " << endl; masterCalculator(); break;
+        case 2: cumulativeGPA(); cout << " " << endl; masterCalculator(); break;
+        case 3: finalNeed(); cout << " " << endl; masterCalculator(); break;
+        case 4: instructions(); cout << " " << endl; masterCalculator(); break;
+        case 5: errorMessagesPrint(); cout << " " << endl; masterCalculator(); break;
     }
+    
     return 0;
 }
 
